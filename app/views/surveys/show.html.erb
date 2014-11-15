@@ -2,3 +2,13 @@
   <%= @survey.name %>
 </div>
 
+<div>
+  <%= link_to "Add Text Question", new_survey_text_style_path(@survey) %>
+</div>
+
+<div>
+  <% @survey.questions.each do |question| %>
+    <%= question.style.body %>
+  <% end %>
+</div>
+
