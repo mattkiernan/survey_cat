@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :surveys do
     resources :questions, only: [:show, :new, :create]
-    resources :text_styles, only: [:new, :create]
+    resources :text_styles, only: [:new, :create, :edit, :update]
   end
 end
