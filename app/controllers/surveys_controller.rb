@@ -22,10 +22,30 @@ class SurveysController < ApplicationController
     @survey = load_survey_from_url
   end
 
+  def edit
+    @survey = load_survey_from_url
+  end
+
+  def update
+    @survey = load_survey_from_url
+    if @survey.update(survey_params)
+      redirect_to @survey
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @survey = load_survey_from_url
+    if @survey.destroy
+      redirect_to surveys_path
+    end
+  end
+
   private
 
   def survey_params
-    params.require(:survey).permit(:name, :description)
+    params.require(:survey).permit(:name, :description, quetion_attributes:[])
   end
 
   def load_survey_from_url
