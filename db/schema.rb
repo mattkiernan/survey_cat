@@ -11,7 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141115192442) do
+ActiveRecord::Schema.define(version: 20141115230413) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "multi_choice_answers", force: true do |t|
+    t.string   "body",                  null: false
+    t.integer  "multi_choice_style_id", null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  create_table "multi_choice_styles", force: true do |t|
+    t.string   "body",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "questions", force: true do |t|
+    t.integer  "survey_id",  null: false
+    t.string   "style_type", null: false
+    t.integer  "style_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "questions", ["style_id"], name: "index_questions_on_style_id", using: :btree
+  add_index "questions", ["survey_id"], name: "index_questions_on_survey_id", using: :btree
+
+  create_table "responses", force: true do |t|
+    t.integer  "survey_id",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "responses", ["survey_id"], name: "index_responses_on_survey_id", using: :btree
 
   create_table "surveys", force: true do |t|
     t.string   "name",        null: false
@@ -21,7 +56,13 @@ ActiveRecord::Schema.define(version: 20141115192442) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "surveys", ["user_id"], name: "index_surveys_on_user_id"
+  add_index "surveys", ["user_id"], name: "index_surveys_on_user_id", using: :btree
+
+  create_table "text_styles", force: true do |t|
+    t.string   "body",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",           null: false
@@ -30,6 +71,6 @@ ActiveRecord::Schema.define(version: 20141115192442) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end
