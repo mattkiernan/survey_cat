@@ -1,3 +1,9 @@
 <h2>Surveys</h2>
 
-<%= render @surveys %>
+<div>
+  <%= link_to "Create new survey", new_survey_path %>
+</div>
+
+<div class="survey-list">
+  <%= render @surveys %>
+</div>

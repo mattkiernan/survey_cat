@@ -1,0 +1,7 @@
+<h2>Create new survey</h2>
+
+<%= form_for @survey do |form| %>
+  <%= form.text_field :name, :placeholder => "Survey name" %>
+  <%= form.text_field :description, :placeholder => "Description" %>
+  <%= form.submit %>
+<% end %>

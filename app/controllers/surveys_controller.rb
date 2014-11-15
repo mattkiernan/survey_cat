@@ -6,11 +6,11 @@ class SurveysController < ApplicationController
   end
 
   def new
-    @survey = Survey.new
+    @survey = current_user.surveys.new
   end
 
   def create
-    @survey = Survey.new(survey_params)
+    @survey = current_user.surveys.new(survey_params)
     if @survey.save
       redirect_to @survey
     else
@@ -25,7 +25,7 @@ class SurveysController < ApplicationController
   private
 
   def survey_params
-    params.require(:survey).permit(:body, :description)
+    params.require(:survey).permit(:name, :description)
   end
 
   def load_survey_from_url
