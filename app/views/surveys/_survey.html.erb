@@ -1,4 +1,6 @@
-<%= link_to survey.name, survey %> -
-<%= link_to "Take survey", new_survey_response_path(survey) %> -
-<%= link_to "View results", survey_responses_path(survey) %> -
-<%= link_to "Delete survey", survey_path(survey), method: :delete %>
+<li>
+  <%= link_to survey.name, survey %> -
+  <%= link_to "Take survey", new_survey_response_path(survey) %> -
+  <%= link_to "View results", survey_responses_path(survey) %> -
+  <%= link_to "Delete survey", survey_path(survey), method: :delete %>
+</li>
