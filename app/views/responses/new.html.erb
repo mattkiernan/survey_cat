@@ -1,3 +1,14 @@
 <h2><%= @survey.name %></h2>
 
-<%= render @survey.questions %>
+<%= form_for [@survey, @response] do |form| %>
+  <% @survey.questions.each do |question| %>
+    <%= render question %>
+    <%= form.fields_for :answers do |answer_attributes| %>
+      <%= answer_attributes.text_field :body %>
+      <%= answer_attributes.text_field :question_id, :type => "hidden", value: question.id %>
+    <% end %>
+  <% end %>
+  <div>
+  <%= form.submit %>
+</div>
+<% end %>

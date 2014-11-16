@@ -1,13 +1,28 @@
 class ResponsesController < ApplicationController
   def new
     @survey = load_survey_from_url
-    @response = Response.new
     @questions = @survey.questions
+    @response = Response.new
+    @answer = @response.answers.new
+  end
+
+  def create
+    @survey = load_survey_from_url
+    @response = @survey.responses.new(response_params)
+    if @response.save
+      redirect_to surveys_path
+    else
+      render :new
+    end
   end
 
   private
 
   def load_survey_from_url
     Survey.find(params[:survey_id])
+  end
+
+  def response_params
+    params.require(:response).permit(:survey_id, answers_attributes:[:id, :question_id, :body])
   end
 end

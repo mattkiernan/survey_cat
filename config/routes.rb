@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resources :text_styles, only: [:new, :create, :edit, :update]
     resources :responses, only: [:new, :create]
   end
+  resources :answers, only: [:new, :create]
 end
