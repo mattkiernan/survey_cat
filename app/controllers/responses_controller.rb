@@ -16,6 +16,15 @@ class ResponsesController < ApplicationController
     end
   end
 
+  def index
+    @survey = load_survey_from_url
+    @responses = @survey.responses
+  end
+
+  def show
+    @response = load_response_from_url
+  end
+
   private
 
   def load_survey_from_url
@@ -24,5 +33,9 @@ class ResponsesController < ApplicationController
 
   def response_params
     params.require(:response).permit(:survey_id, answers_attributes:[:id, :question_id, :body])
+  end
+
+  def load_response_from_url
+    Response.find(params[:id])
   end
 end

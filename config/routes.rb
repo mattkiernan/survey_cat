@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :surveys do
     resources :questions, only: [:show, :new, :create]
     resources :text_styles, only: [:new, :create, :edit, :update]
-    resources :responses, only: [:new, :create]
+    resources :responses, only: [:new, :create, :show, :index]
   end
   resources :answers, only: [:new, :create]
 end

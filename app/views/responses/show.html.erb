@@ -1,0 +1,10 @@
+<h2><%= "Response #{@response.id}" %></h2>
+
+<ul>
+  <% @response.answers.each do |answer| %>
+    <li><%= answer.question.style.body %></li>
+  <ul>
+    <li><%= answer.body %></li>
+  </ul>
+  <% end %>
+</ul>
