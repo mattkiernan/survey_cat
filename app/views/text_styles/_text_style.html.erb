@@ -1,1 +1,6 @@
-<li><%= text_style.body %> - <%= link_to "Edit Question", edit_survey_text_style_path(survey, text_style) %></li>
+<li><%= text_style.body %></li>
+
+<%= form.fields_for :answers do |answer_attributes| %>
+  <%= answer_attributes.text_field :body %>
+<%= answer_attributes.text_field :question_id, :type => "hidden", value: question.id %>
+    <% end %>

@@ -4,11 +4,14 @@
 
 <div>
   <%= link_to "Add Text Question", new_survey_text_style_path(@survey) %>
+  <%= link_to "Add Multi-Choice  Question", new_survey_multi_choice_style_path(@survey) %>
 </div>
 
 <div>
-  <ul>
-    <%= render @survey.questions %>
-  </ul>
+<%= form_for [@survey, @response] do |form| %>
+  <% @survey.questions.each do |question| %>
+    <%= render question.style, form: form, question: question %>
+  <% end %>
+  <%= form.submit %>
+<% end %>
 </div>
-

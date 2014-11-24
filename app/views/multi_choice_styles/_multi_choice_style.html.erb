@@ -1,0 +1,6 @@
+<li><%= multi_choice_style.body %> - <%= link_to "Add answer option", new_multi_choice_style_multi_choice_option_path(multi_choice_style) %></li>
+
+<%= form.fields_for :answers do |answer_attributes| %>
+  <%= answer_attributes.collection_radio_buttons(:multi_choice_option_id, multi_choice_style.multi_choice_options, :id, :body) %>
+<%= answer_attributes.text_field :question_id, :type => "hidden", value: question.id %>
+    <% end %>

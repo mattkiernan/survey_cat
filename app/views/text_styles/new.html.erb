@@ -1,3 +1,6 @@
 <h2>Add new text question</h2>
 
-<%= render "form", survey: @survey, text_style: @text_style %>
+<%= form_for [@survey, @text_style] do |form| %>
+  <%= form.text_field :body, :placeholder => "Question" %>
+  <%= form.submit %>
+<% end %>

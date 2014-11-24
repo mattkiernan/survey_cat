@@ -20,6 +20,7 @@ class SurveysController < ApplicationController
 
   def show
     @survey = load_survey_from_url
+    @response = @survey.responses.new
   end
 
   def edit

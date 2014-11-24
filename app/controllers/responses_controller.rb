@@ -7,6 +7,7 @@ class ResponsesController < ApplicationController
   end
 
   def create
+    binding.pry
     @survey = load_survey_from_url
     @response = @survey.responses.new(response_params)
     if @response.save
@@ -32,7 +33,7 @@ class ResponsesController < ApplicationController
   end
 
   def response_params
-    params.require(:response).permit(:survey_id, answers_attributes:[:id, :question_id, :body])
+    params.require(:response).permit(:survey_id, answers_attributes:[:id, :question_id, :body, :multi_choice_option_id])
   end
 
   def load_response_from_url
