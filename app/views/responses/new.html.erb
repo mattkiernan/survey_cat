@@ -2,7 +2,7 @@
 
 <%= form_for [@survey, @response] do |form| %>
   <% @survey.questions.each do |question| %>
-    <%= render question.style, form: form, question: question %>
+    <%= render question.style, survey: @survey, form: form, question: question %>
   <% end %>
   <%= form.submit %>
 <% end %>
