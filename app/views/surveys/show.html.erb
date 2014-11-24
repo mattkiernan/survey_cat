@@ -7,11 +7,8 @@
   <%= link_to "Add Multi-Choice  Question", new_survey_multi_choice_style_path(@survey) %>
 </div>
 
-<div>
-  <ul>
+<%= form_for [@survey, @response] do |form| %>
   <% @survey.questions.each do |question| %>
-    <li><%= question.style.body %></li>
-    <li><%= question.options %></li>
+    <%= render question.style, form: form, question: question %>
   <% end %>
-</ul>
-</div>
+<% end %>
