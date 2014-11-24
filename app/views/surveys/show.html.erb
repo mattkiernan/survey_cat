@@ -8,10 +8,10 @@
 </div>
 
 <div>
-<%= form_for [@survey, @response] do |form| %>
+  <ul>
   <% @survey.questions.each do |question| %>
-    <%= render question.style, form: form, question: question %>
+    <li><%= question.style.body %></li>
+    <li><%= question.options %></li>
   <% end %>
-  <%= form.submit %>
-<% end %>
+</ul>
 </div>

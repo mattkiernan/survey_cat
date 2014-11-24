@@ -7,7 +7,6 @@ class ResponsesController < ApplicationController
   end
 
   def create
-    binding.pry
     @survey = load_survey_from_url
     @response = @survey.responses.new(response_params)
     if @response.save

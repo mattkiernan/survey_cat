@@ -8,4 +8,14 @@ class Question < ActiveRecord::Base
   has_many :answers
 
   accepts_nested_attributes_for :answers
+
+  def options
+    if style == MultiChoiceStyle
+      style.multi_choice_options.each do |option|
+        option.body
+      end
+    else
+     ""
+    end
+  end
 end
