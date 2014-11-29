@@ -1,0 +1,30 @@
+.new-session{
+  @include span-columns(10);
+  @include shift(1);
+  margin-top: 50px;
+  h1{
+  margin: 0 0 20px 0;
+  };
+};
+
+.app-description{
+  @include span-columns(6);
+  p{
+    font-size: 20px;
+  }
+}
+
+.signup-form{
+  @include span-columns(6);
+}
+
+.sessions-lower-half{
+  @include outer-container;
+}
+
+.icons{
+  @include span-columns(10);
+  margin-top: 60px;
+  @include shift(1);
+}
+

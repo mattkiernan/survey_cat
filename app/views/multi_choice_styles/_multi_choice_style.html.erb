@@ -1,5 +1,5 @@
 <li><%= multi_choice_style.body %> -
-<% if signed_in? && current_user == survey.user_id %>
+<% if signed_in? && current_user.id == survey.user_id %>
 <%= link_to "Add answer option", new_multi_choice_style_multi_choice_option_path(multi_choice_style) %></li>
 <% end %>
 

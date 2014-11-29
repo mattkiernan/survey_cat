@@ -1,3 +1,8 @@
-.survey-list, .survey-display{
-  margin-top: 10px;
+body{
+  margin: 0px;
+  padding: 0px;
+};
+
+.outer-container{
+  @include outer-container;
 }

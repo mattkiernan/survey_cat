@@ -1,13 +1,27 @@
-<%= form_for :session, url: session_path do |form| %>
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email %>
+<div class="new-session">
+  <div class="app-description">
+    <h1>Welcome back!</h1>
+    <p>What took you so long?</p>
+    <p>Let's get back to making surveys!</p>
   </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+  <div class="signup-form">
+    <%= form_for :session, url: session_path do |form| %>
+      <div>
+      <%= form.label :email %>
+      <%= form.email_field :email %>
+    </div>
+    <div>
+      <%= form.label :password %>
+      <%= form.password_field :password %>
+    </div>
+    <div>
+      <%= form.submit "Sign in" %>
+    </div>
+  <% end %>
   </div>
-  <div>
-    <%= form.submit "Sign in" %>
+</div>
+<div class="sessions-lower-half">
+  <div class="icons">
+    <%= render "refills/icon_bullet_points" %>
   </div>
-<% end %>
+</div>
