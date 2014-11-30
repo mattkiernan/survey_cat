@@ -8,11 +8,7 @@
 </head>
 <body>
 <%= render 'refills/navigation' %>
-<% flash.each do |name, msg| -%>
-  <div class="flash">
-    <p><%= content_tag :div, msg, class: name %></p>
-</div>
-<% end %>
+<%= render "layouts/flash" %>
 <div class="outer-container">
   <%= yield %>
 </div>

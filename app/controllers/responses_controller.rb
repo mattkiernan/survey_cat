@@ -10,10 +10,10 @@ class ResponsesController < ApplicationController
     @survey = load_survey_from_url
     @response = @survey.responses.new(response_params)
     if @response.save && signed_in?
-      flash[:notice] = "Thank you for completing the survey!"
+      flash[:thanks] = "Thank you for completing the survey!"
       redirect_to surveys_path
     elsif @response.save
-      flash[:notice] = "Thank you for completing the survey!"
+      flash[:thanks] = "Thank you for completing the survey!"
       redirect_to new_user_path
     else
       render :new
