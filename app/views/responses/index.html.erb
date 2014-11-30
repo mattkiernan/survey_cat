@@ -1,3 +1,5 @@
-<%= @survey.name %>
+<div class="survey-top">
+  <h2><%= @survey.name %></h2>
 
-<%= render @responses, survey: @survey %>
+  <%= render @responses, survey: @survey %>
+</div>

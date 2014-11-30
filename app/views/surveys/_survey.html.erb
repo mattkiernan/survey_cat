@@ -1,6 +1,6 @@
-<li>
-  <%= link_to survey.name, survey %> -
-  <%= link_to "Take survey", new_survey_response_path(survey) %> -
-  <%= link_to "View results", survey_responses_path(survey) %> -
-  <%= link_to "Delete survey", survey_path(survey), method: :delete %>
-</li>
+<tr>
+  <td><%= link_to survey.name, survey %>
+  <td><%= link_to "#{survey.response_count} responses", survey_responses_path(survey) %>
+  <td><%= button_to "Send", new_survey_response_path(survey), class: "button", method: :get %>
+  <td><%= button_to "Delete", survey_path(survey), class: "button", method: :delete %>
+</tr>

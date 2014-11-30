@@ -7,15 +7,6 @@
       <img src="/cat.png" alt="">
     </a>
         <li class="nav-link logo-text"><%= link_to "SURVEY CAT", root_path %></a></li>
-        <% if signed_in? %>
-        <li class="nav-link"><%= link_to "Create a survey", new_survey_path %></li>
-        <li class="nav-link more"><a href="javascript:void(0)">More</a>
-          <ul class="submenu">
-            <li><a href="javascript:void(0)">Settings</a></li>
-            <li><a href="javascript:void(0)">Contact</a></li>
-          <% end %>
-          </ul>
-        </li>
 
       </ul>
     </div>

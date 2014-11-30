@@ -1,8 +1,16 @@
+<div class="survey-top">
 <h2><%= @survey.name %></h2>
+<% if signed_in? && current_user.id == @survey.user_id  %>
+<div class="message">
+  <p>Copy the URL below and send to recipients. This message won't appear to recipients.</p>
+  <p><%= link_to "https://vast-citadel-7688.herokuapp.com/surveys/#{@survey.id}/responses/new", new_survey_response_path(@survey) %></p>
+</div>
+<% end %>
 
 <%= form_for [@survey, @response] do |form| %>
   <% @survey.questions.each do |question| %>
     <%= render question.style, survey: @survey, form: form, question: question %>
   <% end %>
-  <%= form.submit %>
+  <%= form.submit "Submit Response", class: "submit-button" %>
 <% end %>
+</div>

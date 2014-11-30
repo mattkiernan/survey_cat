@@ -1,11 +1,8 @@
-<h2>Surveys</h2>
-
-<div>
-  <%= link_to "Create new survey", new_survey_path %>
-</div>
-
-<div class="survey-list">
-  <ul>
-    <%= render @surveys %>
-  </ul>
+<div class="survey-top">
+  <h2>Review your surveys or <%= link_to "create a new one", new_survey_path %></h2>
+  <div class="survey-list">
+    <ul>
+      <%= render "refills/tables_minimal", surveys: @surveys %>
+    </ul>
+  </div>
 </div>

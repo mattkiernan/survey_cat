@@ -1,4 +1,7 @@
-<%= form_for [@survey, @multi_choice_style] do |form| %>
-  <%= form.text_field :body %>
-<%= form.submit %>
+<div class="survey-top">
+  <h2>Add a new multiple-choice question</h2>
+  <%= form_for [@survey, @multi_choice_style] do |form| %>
+    <%= form.text_field :body %>
+  <%= form.submit %>
 <% end %>
+</div>

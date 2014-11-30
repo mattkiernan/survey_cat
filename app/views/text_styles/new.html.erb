@@ -1,6 +1,8 @@
-<h2>Add new text question</h2>
+<div class="survey-top">
+  <h2>Add new text question</h2>
 
-<%= form_for [@survey, @text_style] do |form| %>
-  <%= form.text_field :body, :placeholder => "Question" %>
+  <%= form_for [@survey, @text_style] do |form| %>
+    <%= form.text_field :body, :placeholder => "Question" %>
   <%= form.submit %>
 <% end %>
+</div>

@@ -5,4 +5,65 @@ body{
 
 .outer-container{
   @include outer-container;
+  height: 800px;
+}
+
+.survey-top{
+  h2{
+    margin: 60px 0px 20px 0px;
+  }
+}
+
+.survey-display{
+  width: 400px;
+}
+
+.survey-toolbar hr{
+  margin: 20px 0;
+}
+
+.questions-list{
+  li{
+    list-style-type: none;
+    margin: 30px 0 10px 0;
+    font-weight: bold;
+  }
+  form{
+    float: left;
+  }
+  label{
+    font-weight: normal;
+  }
+}
+
+.question-form{
+  width: 400px;
+}
+
+.submit-button{
+  margin: 30px 0 30px 0;
+  width: 400px;
+  height: 50px;
+  text-transform: uppercase;
+}
+
+.button{
+  width: 150px;
+}
+
+.message{
+  box-shadow: 1px 1px 1px 1px;
+  width: 800px;
+  padding: 10px;
+  p{
+    margin-bottom: 10px;
+  }
+}
+
+.answer{
+  font-weight: bold;
+}
+
+.answer-option{
+  float: left;
 }

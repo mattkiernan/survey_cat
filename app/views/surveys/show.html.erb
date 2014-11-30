@@ -1,14 +1,17 @@
-<div class="survey-display">
-  <%= @survey.name %>
-</div>
-
 <div>
-  <%= link_to "Add Text Question", new_survey_text_style_path(@survey) %>
-  <%= link_to "Add Multi-Choice  Question", new_survey_multi_choice_style_path(@survey) %>
+  <div class="survey-top">
+  <h2><%= @survey.name %></h2>
 </div>
 
+<div class="survey-toolbar">
+<hr>
+  <%= link_to "Add Text Question", new_survey_text_style_path(@survey) %>  |
+  <%= link_to "Add Multi-Choice  Question", new_survey_multi_choice_style_path(@survey) %>
+  <hr>
+</div>
 <%= form_for [@survey, @response] do |form| %>
   <% @survey.questions.each do |question| %>
     <%= render question.style, survey: @survey, form: form, question: question %>
   <% end %>
 <% end %>
+</div>
