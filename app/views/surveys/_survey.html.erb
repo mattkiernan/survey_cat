@@ -1,6 +1,6 @@
 <tr>
   <td><%= link_to survey.name, survey %>
-  <td><%= link_to "#{survey.response_count} responses", survey_responses_path(survey) %>
+  <td><%= link_to "#{pluralize(survey.response_count, "response")}", survey_responses_path(survey) %>
   <td><%= button_to "Send", new_survey_response_path(survey), class: "button", method: :get %>
   <td><%= button_to "Delete", survey_path(survey), class: "button", method: :delete %>
 </tr>
