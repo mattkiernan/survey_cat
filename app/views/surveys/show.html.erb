@@ -6,7 +6,8 @@
 <div class="survey-toolbar">
 <hr>
   <%= link_to "Add Text Question", new_survey_text_style_path(@survey) %>  |
-  <%= link_to "Add Multi-Choice  Question", new_survey_multi_choice_style_path(@survey) %>
+  <%= link_to "Add Multi-Choice  Question", new_survey_multi_choice_style_path(@survey) %> |
+  <%= link_to "I'm done, take me back!", root_path %>
   <hr>
 </div>
 <%= form_for [@survey, @response] do |form| %>
