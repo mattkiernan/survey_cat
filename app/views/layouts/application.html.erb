@@ -14,4 +14,40 @@
 </div>
 <%= render "refills/footer_2" %>
 </body>
+<script>
+window.pendo_options = {
+apiKey: '2269c8e4-1f08-4c60-505b-74b8e738072b',
+
+        // If you load your user info asynchronously, set this to true
+        usePendoAgentAPI: false,
+
+        visitor: {
+id:              '1'   // Required if user is logged in
+                   // email:        'matt.kiernan@logentries.com'
+                   // role:         'Product Marketing'
+
+                   // You can add any additional visitor level key-values here,
+                   // as long as it's not one of the above reserved names.
+        },
+
+account: {
+           // id:           '1a'
+           // name:         'KIERNAN'
+           // planLevel:    'Starter'
+           // planPrice:    '$10'
+           // creationDate: '05-01-2015'
+
+           // You can add any additional account level key-values here,
+           // as long as it's not one of the above reserved names.
+         }
+};
+(function() {
+ var script = document.createElement('script');
+ script.type = 'text/javascript';
+ script.async = true;
+ script.src = ('https:' === document.location.protocol ? 'https://' : 'http://' ) + 'd3accju1t3mngt.cloudfront.net/js/params.min.js';
+ var firstScript = document.getElementsByTagName('script')[0];
+ firstScript.parentNode.insertBefore(script, firstScript);
+ })();
+</script>
 </html>
