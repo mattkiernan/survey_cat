@@ -1,7 +1,7 @@
 class SurveysController < ApplicationController
   before_action :require_login
 
-  def ndex
+  def index
     @surveys = current_user.surveys
   end
 
